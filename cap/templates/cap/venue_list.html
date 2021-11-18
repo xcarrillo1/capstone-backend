@@ -1,0 +1,8 @@
+<h2>Venues <a href="">(+)</a></h2>
+<ul>
+  {% for venue in venues %}
+  <li>
+    <a href="{% url 'venue_detail' pk=venue.pk %}">{{ venue.name }}</a>
+  </li>
+  {% endfor %}
+</ul>

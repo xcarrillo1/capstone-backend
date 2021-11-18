@@ -1,0 +1,13 @@
+<h2>{{ venue.name }} <a href="">(edit)</a></h2>
+<h4>{{ venue.location }}</h4>
+
+<img src="{{ venue.photo_url }}" alt="" class="venue-photo" />
+
+<h3>Seats <a href="">(+)</a></h3>
+<ul>
+  {% for seat in venue.seats.all %}
+  <li>
+    <a href="{% url 'seat_detail' pk=seat.pk %}">{{ seat.slocation }}</a>
+  </li>
+  {% endfor %}
+</ul>

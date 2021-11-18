@@ -1,0 +1,8 @@
+<h2>Seats</h2>
+<ul>
+  {% for seat in seats %}
+  <li>
+    <a href="{% url 'seat_detail' pk=seat.pk %}">{{ seat.slocation }}</a>
+  </li>
+  {% endfor %}
+</ul>
