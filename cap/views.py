@@ -3,22 +3,28 @@
 # from .models import Venue, Seat
 # from .forms import VenueForm, SeatForm
 from rest_framework import generics
+from rest_framework import permissions
 from .serializers import VenueSerializer, SeatSerializer
 from .models import Venue, Seat
+from rest_framework.permissions import AllowAny
 
 class VenueList(generics.ListCreateAPIView):
+    permissions_classes = [AllowAny]
     queryset = Venue.objects.all()
     serializer_class = VenueSerializer
 
 class VenueDetail(generics.RetrieveUpdateDestroyAPIView):
+    permissions_classes = [AllowAny]
     queryset = Venue.objects.all()
     serializer_class = VenueSerializer
 
 class SeatList(generics.ListCreateAPIView):
+    permissions_classes = [AllowAny]
     queryset = Seat.objects.all()
     serializer_class = SeatSerializer
 
 class SeatDetail(generics.RetrieveUpdateDestroyAPIView):
+    permissions_classes = [AllowAny]
     queryset = Seat.objects.all()
     serializer_class = SeatSerializer
 
